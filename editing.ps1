@@ -360,17 +360,17 @@ function EditVideo {
 
     # region Reencode
     
-    if ($videoFolder.Contains("F:\Blender\"))
-    {
-        $filename = $videoFolder.Replace("F:\Blender\", "")
-    }
-    else
-    {
-        $filename = "OUT[" + -join ((65..90) + (97..122) | Get-Random -Count 5 | ForEach-Object {[char]$_}) + "]"
-    }
-
-    Write-Host "VP9 reencode" -ForegroundColor Magenta
-    ffmpeg -y -loglevel info -hide_banner -stats -i ".\out\$outName.mkv" -f webm -c:v libvpx-vp9 -b:v 0 -crf 10 -row-mt 1 "C:\Users\pixel\Desktop\To_upload\$filename.webm"
+    #if ($videoFolder.Contains("F:\Blender\"))
+    #{
+    #    $filename = $videoFolder.Replace("F:\Blender\", "")
+    #}
+    #else
+    #{
+    #    $filename = "OUT[" + -join ((65..90) + (97..122) | Get-Random -Count 5 | ForEach-Object {[char]$_}) + "]"
+    #}
+    #
+    #Write-Host "VP9 reencode" -ForegroundColor Magenta
+    #ffmpeg -y -loglevel info -hide_banner -stats -i ".\out\$outName.mkv" -f webm -c:v libvpx-vp9 -b:v 0 -crf 10 -row-mt 1 "C:\Windows\System32\$filename.webm"
     # endregion
 
 
